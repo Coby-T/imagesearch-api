@@ -1,0 +1,27 @@
+{
+  "name": "imagesearch",
+  "version": "1.0.0",
+  "description": "Image search abstraction layer that searches through the imgur image database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coby-T/imagesearch-api.git"
+  },
+  "keywords": [
+    "imgur",
+    "image",
+    "search"
+  ],
+  "author": "Coby Tao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coby-T/imagesearch-api/issues"
+  },
+  "homepage": "https://github.com/Coby-T/imagesearch-api#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
