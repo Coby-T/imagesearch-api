@@ -15,13 +15,7 @@ mongo.connect(MONGODB_URI, function(err, db) {
    else {
        console.log('Successfully connected to the database.');
    }
-   
-   db.createCollection('searches', {
-        capped: true,
-        size: 5242880,
-        max: 10
-    });
-    
+
     routes(app, db);
     
     app.listen(PORT, function() {

@@ -13,7 +13,7 @@ module.exports = function Controller (db) {
             method: 'GET',
             host: 'api.imgur.com',
             path: '/3/gallery/search/'+ page + '?q=' + query,
-            headers: {'Authorization' : "Client-ID " + (process.env.CLIENT_ID || 'faca5501ac60472')}
+            headers: {'Authorization' : "Client-ID " + (process.env.CLIENT_ID)}
         };
         var request = https.request(requestOptions, function (req) {
             var result = '';
