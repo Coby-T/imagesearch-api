@@ -2,12 +2,10 @@
 
 module.exports = function (app, db) {
     
-    var path = require('path');
+    var express = require('express');
     var dateFormat = require('dateformat');
     
-    app.get('/', function (req, res) {
-        res.send("Read me.");
-    });
+    app.get('/', express.static("views"));
     
     app.get('/search', handlePost);
     
@@ -34,8 +32,23 @@ module.exports = function (app, db) {
         var controller = new SearchController(db);
         
         controller.search(currentSearch, function(results) {
-            res.end(results);
+            var resultArr = [];
+            results.map(function(resultObj) {
+                resultArr.push({
+                    title: resultObj.title,
+                    description: (resultObj.description) ? resultObj.description : " ",
+                    uploader: (resultObj.account_url) ? resultObj.account_url : " ",
+                    upload_date: datetimeConvert(resultObj.datetime),
+                    link: resultObj.link
+                });
+            });
+            res.json(resultArr);
         });
         controller.addToSearchHistory(currentSearch);
+    }
+    
+    function datetimeConvert (dateString) {
+        var date = new Date(dateString * 1000);
+        return dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT");
     }
 };

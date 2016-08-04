@@ -22,17 +22,17 @@ module.exports = function Controller (db) {
                 result += data;
             });
             req.on('end', function() {
-                callback(result);
+                callback(JSON.parse(result).data);
             });
         });
         request.end();
-    }
+    };
     
     this.addToSearchHistory = function (currentSearch) {
         searchHistory.save({
             query: currentSearch.query,
             date: currentSearch.date
         });
-    }
+    };
     
 };

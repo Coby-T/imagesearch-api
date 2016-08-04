@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>Imgur Search Abstraction Layer</title>
+    </head>
+    <body>
+      <h1>Imgur Search Abstraction Layer</h1>
+      <hr>
+      <br/>
+      <p>by Coby Tao</p>
+      <p>As part of <a href="https://www.freecodecamp.com/challenges/image-search-abstraction-layer">FreeCodeCamp's curriculum</a></p>
+      <br/>
+      <h3>User Stories:</h3>
+      <ol>
+        <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+        <li>I can paginate through the responses by adding an offset=2 parameter to the URL.</li>
+        <li>I can get a list of the most recently submitted search strings.</li>
+      </ol>
+      <br/>
+      <h3>Example Usage:</h3>
+      <ul>
+        <li>Search for query "dog" without pagination: <code>https://ct-imagesearch.herokuapp.com/search?q=dog</code></li>
+        <li>Search for query "dog" with pagination: <code>https://ct-imagesearch.herokuapp.com/search?q=dog&offset=10</code></li>
+        <li>Retrieve latest searches: <code>https://ct-imagesearch.herokuapp.com/latestsearches</code></li>
+      </ul>
+      <br/>
+      <h3>Live Site:</h3>
+      <p><a href="https://ct-imagesearch.herokuapp.com/">https://ct-imagesearch.herokuapp.com/</a></p>
+    </body>
+</html>
